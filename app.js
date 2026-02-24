@@ -9,12 +9,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// IMPORTANT LINE
 app.use("/api/users", userRoutes);
 
 // Swagger
 swaggerDocs(app);
 
-// Error Middleware (ALWAYS LAST)
+// Error middleware (ALWAYS LAST)
 app.use(errorHandler);
 
 module.exports = app;
